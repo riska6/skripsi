@@ -1,7 +1,7 @@
 import streamlit as st
 import webbrowser
 
-url = 'https://riska6-skripsi-homepage-dgg9jf.streamlit.app/contact'
+ st.write("url = 'https://riska6-skripsi-homepage-dgg9jf.streamlit.app/contact")
 
 if st.button('Open browser'):
     webbrowser.open_new_tab(url)
