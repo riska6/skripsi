@@ -1,18 +1,18 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Multipage App",
+    page_title="Selamat Datang di Website Kombinasi AHC & K-Means",
     page_icon="👋",
 )
 
-st.title("Main Page")
+st.title("Halaman Utama")
 st.sidebar.success("Pilih halaman diatas.")
 
-if "my_input" not in st.session_state:
-    st.session_state["my_input"] = ""
+if "riska" not in st.session_state:
+    st.session_state["riska"] = ""
 
-my_input = st.text_input("Input a text here", st.session_state["my_input"])
+my_input = st.text_input("Masukkan Username", st.session_state["riska"])
 submit = st.button("Submit")
 if submit:
-    st.session_state["my_input"] = my_input
-    st.write("You have entered: ", my_input)
+    st.session_state["riska"] = my_input
+    st.write("selamat datang: ", my_input)
