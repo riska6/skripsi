@@ -15,4 +15,4 @@ my_input = st.text_input("Masukkan Username", st.session_state["riska"])
 submit = st.button("Submit")
 if submit:
     st.session_state["riska"] = my_input
-    st.write("selamat datang: ", my_input)
+    st.write("Selamat Datang, ", my_input)
