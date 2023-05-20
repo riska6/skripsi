@@ -22,7 +22,7 @@ if data_file is not None:
     file_details = {"Filename":data_file.name,
     "FileType":data_file.type,"FileSize":data_file.size}
     st.write(file_details)
-    df = pd.read_excel(data_file)
+    df = pd.read_xlsx(data_file)
     st.dataframe(df)
 
     # Save File
