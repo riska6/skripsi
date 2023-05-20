@@ -31,4 +31,4 @@ except Exception as e:
   
  if chart_select == 'Scatterplots':
   st.sidebar.subheader("Scatterplot Settings")
-  x_value = st.sidebar.selectbox('X axis', options=['a', 'b'])
+  x_values = st.sidebar.selectbox('X axis', options=['a', 'b'])
