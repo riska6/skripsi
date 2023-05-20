@@ -22,6 +22,7 @@ if uploaded_file is not None:
 global numeric_columns    
 try:
   st.write(df)
+  numeric_columns = (df.select_dtypes(['float', 'int']).columns)
 except Exception as e:
   print(e)
   st.write("Tolong upload file yang benar.")
@@ -37,5 +38,6 @@ if chart_select == 'Scatterplots':
     y_values = st.selectbox('Y axis', options=numeric_columns)
     plot = px.scatter(data_frame=df, x=x_values, y=y_values)
     st.plotly_chart(plot)
+    
   except Exception as e:
     print(e)
