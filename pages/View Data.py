@@ -22,7 +22,7 @@ if uploaded_file is not None:
 global numeric_columns    
 try:
   st.write(df)
-  numeric_columns = (df.select_dtypes(['float', 'int']).columns)
+  numeric_columns = list(df.select_dtypes(['float', 'int']).columns)
 except Exception as e:
   print(e)
   st.write("Tolong upload file yang benar.")
