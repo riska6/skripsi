@@ -11,10 +11,5 @@ st.write(
             """
         )
 
-with st.sidebar:
-    selected = option_menu("Product", ["BFR CORPORATE", 'BFR mikro', 'BFR Consumer', 'BRF'], 
-        icons=['play', 'play'], menu_icon="cast", default_index=1)
-    selected
-    print(selected)
 df = pd.read_excel("DATA PASIEN DIABETES FIX.xlsx")
 st.dataframe(df)
