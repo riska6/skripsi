@@ -4,10 +4,10 @@ import pandas as pd
 import os
 
 st.title("View Data")
-st.sidebar.subheader("Pengaturan Visualisasi")
+st.subheader("Pengaturan Visualisasi")
 
 #setup file upload
-uploaded_file = st.sidebar.file_uploader(label="Upload your excel or csv file.",
+uploaded_file = st.file_uploader(label="Upload your excel or csv file.",
                         type=['csv', 'xlsx'])
 global df 
 if uploaded_file is not None:
@@ -30,5 +30,5 @@ chart_select = st.selectbox(
     options=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot'])
 
 if chart_select == 'Scatterplots':
-  st.sidebar.subheader("Scatterplot Settings")
-  x_values = st.sidebar.selectbox('X axis', options=['a', 'b'])
+  st.subheader("Scatterplot Settings")
+  x_values = st.selectbox('X axis', options=['a', 'b'])
