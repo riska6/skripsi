@@ -3,13 +3,11 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.subheader("Halaman Excel")
+st.title("View Data")
 st.write(
             """
             Pada halaman ini, akan menampilkan bagaimana data pasien yang akan digunakan pada website.
             """
         )
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-  df = pd.read_excel(uploaded_file)
-  st.write(dataframe)
+df = pd.read_excel("./pages/DATA PASIEN FIX.xlsx")  # read a excel file inside the 'data" folder next to 'app.py'
+st.write(df)  # visualize my dataframe in the Streamlit app
