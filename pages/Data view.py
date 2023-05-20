@@ -9,5 +9,5 @@ st.write(
             Pada halaman ini, akan menampilkan bagaimana data pasien yang akan digunakan pada website.
             """
         )
-df = pd.read_excel("DATA PASIEN DIABETES FIX.xlsx")  # read a excel file inside the 'data" folder next to 'app.py'
+df = pd.read_excel("./DATA PASIEN DIABETES FIX.xlsx")  # read a excel file inside the 'data" folder next to 'app.py'
 st.write(df)  # visualize my dataframe in the Streamlit app
