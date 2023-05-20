@@ -19,6 +19,7 @@ if uploaded_file is not None:
     print(e)
     df = pd.read_csv(uploaded_file)
     
+global numeric_columns    
 try:
   st.write(df)
 except Exception as e:
@@ -31,4 +32,10 @@ chart_select = st.selectbox(
 
 if chart_select == 'Scatterplots':
   st.subheader("Scatterplot Settings")
-  x_values = st.selectbox('X axis', options=['a', 'b'])
+  try:
+    x_values = st.selectbox('X axis', option=numeric_columns)
+    y_values = st.selectbox('Y axis', option=numeric_columns)
+    plot = px.scatter(data_frame=df, x=x_values, y=y_values)
+    st.plotly_chart(plot)
+  except Exception as e:
+    print(e)
