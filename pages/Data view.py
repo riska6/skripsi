@@ -1,7 +1,7 @@
 # Import Library
 import streamlit as st
 import pandas as pd
-from openpyxl import excel
+import matplotlib.pyplot as plt
 import os
 
 st.subheader("Halaman Excel")
