@@ -33,8 +33,8 @@ chart_select = st.selectbox(
 if chart_select == 'Scatterplots':
   st.subheader("Scatterplot Settings")
   try:
-    x_values = st.selectbox('X axis', option=numeric_columns)
-    y_values = st.selectbox('Y axis', option=numeric_columns)
+    x_values = st.selectbox('X axis', options=numeric_columns)
+    y_values = st.selectbox('Y axis', options=numeric_columns)
     plot = px.scatter(data_frame=df, x=x_values, y=y_values)
     st.plotly_chart(plot)
   except Exception as e:
