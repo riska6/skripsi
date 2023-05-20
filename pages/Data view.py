@@ -1,6 +1,7 @@
 # Import Library
 import streamlit as st
 import pandas as pd
+from openpyxl import excel
 import os
 
 st.subheader("Halaman Excel")
@@ -22,7 +23,7 @@ if data_file is not None:
     file_details = {"Filename":data_file.name,
     "FileType":data_file.type,"FileSize":data_file.size}
     st.write(file_details)
-    df = pd.read_xlsx(data_file)
+    df = pd.read_excel(data_file)
     st.dataframe(df)
 
     # Save File
