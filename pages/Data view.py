@@ -12,11 +12,11 @@ st.write(
 
 # Method atau fungsi save
 def save_upload(uploadedfile):
-    with open(os.path.join("Documents/DataCsv",uploadedfile.name), "wb") as f:
+    with open(os.path.join("Documents/DataExcel",uploadedfile.name), "wb") as f:
         f.write(uploadedfile.getbuffer())
         return st.success("File berhasil disave: {} in Documents".format(uploadedfile.name))
 
-data_file = st.file_uploader("Upload Csv/Excel",type=["csv", "xlsx"],accept_multiple_files=False,key="file_uploader")
+data_file = st.file_uploader("Upload Csv/Excel",type=["xlsx"],accept_multiple_files=False,key="file_uploader")
 if data_file is not None:
     st.write(type(data_file))
     file_details = {"Filename":data_file.name,
