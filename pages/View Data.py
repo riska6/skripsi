@@ -24,3 +24,12 @@ try:
 except Exception as e:
   print(e)
   st.write("Tolong upload file yang benar.")
+
+  chart_select = st.slidebar.selectbox(
+    label="Pilih tipe chart"
+    option=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot']
+ )
+  
+ if chart_select == 'Scatterplots':
+  st.sidebar.subheader("Scatterplot Settings")
+  x_value = st.sidebar.selectbox('X axis', options=['a', 'b'])
