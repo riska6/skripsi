@@ -1,7 +1,6 @@
 # Import Library
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 
 st.subheader("Halaman Excel")
