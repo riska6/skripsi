@@ -25,7 +25,7 @@ except Exception as e:
   print(e)
   st.write("Tolong upload file yang benar.")
 
-chart_select = st.slidebar.selectbox(
+chart_select = st.selectbox(
     label="Pilih tipe chart",
     options=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot'])
 
