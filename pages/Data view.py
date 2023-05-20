@@ -11,20 +11,8 @@ st.write(
             """
         )
 
-# Method atau fungsi save
-def save_upload(uploadedfile):
-    with open(os.path.join("Documents/DataExcel",uploadedfile.name), "wb") as f:
-        f.write(uploadedfile.getbuffer())
-        return st.success("File berhasil disave: {} in Documents".format(uploadedfile.name))
+df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
+# df = pd.read_excel(...)  # will work for Excel files
 
-data_file = st.file_uploader("Upload Excel",type=["xlsx"],accept_multiple_files=False,key="file_uploader")
-if data_file is not None:
-    st.write(type(data_file))
-    file_details = {"Filename":data_file.name,
-    "FileType":data_file.type,"FileSize":data_file.size}
-    st.write(file_details)
-    df = pd.read_excel(data_file)
-    st.dataframe(df)
-
-    # Save File
-    save_upload(data_file)
+st.title("Hello world!")  # add a title
+st.write(df)  # visualize my dataframe in the Streamlit app
