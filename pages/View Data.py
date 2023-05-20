@@ -4,11 +4,7 @@ import pandas as pd
 import os
 
 st.title("View Data")
-st.write(
-            """
-            Pada halaman ini, akan menampilkan bagaimana data pasien yang akan digunakan pada website.
-            """
-        )
+st.sidebar.subheader("Pengaturan Visualisasi")
 
-df = pd.read_excel("DATA PASIEN DIABETES FIX.xlsx")
-st.dataframe(df)
+#setup file upload
+st.sidebar.file_uploader(label="Upload your excel or csv file.")
