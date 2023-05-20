@@ -11,3 +11,4 @@ st.write(
         )
 df = pd.read_excel("./pages/DATA PASIEN DIABETES FIX.xlsx")  # read a excel file inside the 'data" folder next to 'app.py'
 # df = pd.read_excel(...)  # will work for Excel files
+st.write(df)
