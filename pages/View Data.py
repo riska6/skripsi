@@ -27,7 +27,7 @@ except Exception as e:
 
   chart_select = st.slidebar.selectbox(
     label="Pilih tipe chart"
-    option=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot']
+    options=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot']
  )
   
  if chart_select == 'Scatterplots':
