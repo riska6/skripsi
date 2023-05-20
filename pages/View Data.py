@@ -29,6 +29,6 @@ except Exception as e:
     label="Pilih tipe chart",
     options=["Scatterplots", "Lineplots", "Histogram", "Boxplot"])
   
- if chart_select == 'Scatterplots':
+ if chart_select == "Scatterplots":
   st.sidebar.subheader("Scatterplot Settings")
   x_values = st.sidebar.selectbox('X axis', options=['a', 'b'])
