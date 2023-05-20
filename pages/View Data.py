@@ -7,7 +7,7 @@ st.title("View Data")
 st.sidebar.subheader("Pengaturan Visualisasi")
 
 #setup file upload
-upload_file = st.sidebar.file_uploader(label="Upload your excel or csv file.",
+uploaded_file = st.sidebar.file_uploader(label="Upload your excel or csv file.",
                         type=['csv', 'xlsx'])
 global df 
 if uploaded_file is not None:
