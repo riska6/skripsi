@@ -23,27 +23,35 @@ if uploaded_file is not None:
     
 try:
   st.write(df)
+  numericAll_columns = list(df.select_dtypes([float, int]).columns)
   numeric_columns = list(df.columns)
 except Exception as e:
   st.write('Error Reading Columns')
 
 chart_select = st.selectbox(
     label="Pilih tipe chart",
-    options=['Scatterplots', 'Lineplots', 'Histogram', 'Boxplot'])
+    options=['Scatterplots All', 'Scatterplots', 'Lineplots', 'Histogram', 'Boxplot'])
 
-if chart_select == 'Scatterplots':
+if chart_select == 'Scatterplots All':
   st.subheader("Scatterplot Settings")
   try:
-    x_values = st.selectbox('X axis', options=np.append('', numeric_columns))
-    y_values = st.selectbox('Y axis', options=np.append('', numeric_columns))
-    if x_values=='':
-      print("Y")
-      plot = px.scatter(data_frame=df, x=x_values, y=y_values)
-      st.plotly_chart(plot)
-    else:
-      print(x_values)
-      plot = px.scatter(data_frame=df, x=x_values, y=y_values)
-      st.plotly_chart(plot)
+    x_values = st.selectbox('X axis', options=numericAll_columns)
+    y_values = st.selectbox('Y axis', options=numericAll_columns)
+
+    plot = px.scatter(data_frame=df, x=x_values, y=y_values)
+    st.plotly_chart(plot)
+  
+  except Exception as e:
+    print(e)
+
+elif chart_select == 'Scatterplots':
+  st.subheader("Scatterplot Settings")
+  try:
+    x_values = st.selectbox('X axis', options=numeric_columns)
+    y_values = st.selectbox('Y axis', options=numeric_columns)
+
+    plot = px.scatter(data_frame=df, x=x_values, y=y_values)
+    st.plotly_chart(plot)
     
     
   except Exception as e:
